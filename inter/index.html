@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // console.log('A')
+    // setTimeout(() => {
+    //   console.log("B")
+    // }, 0);
+    // Promise.resolve().then(() => {
+    //   console.log('C');
+    // })
+    // console.log('D')
+    // console.log('E')
+    // console.log('F')
+    // console.log('G')
+    // console.log('H')
+    //ans: A> D> E> F> G> H> C> B
+
+
+    // console.log(x);
+    // var x = 5;
+    // //ans: undefined
+
+
+    // for(var i = 0; i<3; i++){
+    //   setTimeout(() => {
+    //     console.log(i);
+    //   }, 0);
+    // }
+    // //ans: 3 3 3 
+
+
+    // console.log(1 + '2' + '2'); // 122
+    // console.log(1 + +'2' + '2'); // 32
+    // console.log(1 + -'2' + '2'); // -12
+    // console.log(+'1' + '1' + '2'); // 112
+    // console.log('A' - 'B' + '2'); // NaN2
+    // console.log('A' - 'B' + 2); // NaN
+
+
+    // function outer(){
+    //   let count = 0;
+    //   return function inner(){
+    //     return ++count;
+    //   }
+    // }
+    // const counter = outer();
+    // console.log(counter()); // 1
+    // console.log(counter()); // 2
+    // console.log(counter()); // 3
+
+
+    // console.log('start');
+    // setTimeout(() => {
+    //   console.log('timeout');
+    // }, 0);
+    // Promise.resolve().then(() => console.log('promise'));
+    // console.log('end');
+    // //ans: start, end, promise, timeout.
+
+
+    // console.log([1, 2, 3] + [4, 5, 6]); // 1,2,34,5,6
+    // console.log(...'hello'); // h e l l o
+
+
+    // remove duplicate item
+    //  const arr = [1, 1, 2, 3, 4, 4];
+    //  const uarr = [... new Set(arr)]
+    //  console.log(uarr)
+    //  const uar = [];
+    // for(let i = 0; i<arr.length; i++){
+    //   if(!uar.includes(arr[i])){
+    //     uar.push(arr[i])
+    //   }
+    // }
+    // console.log(uar)
+
+
+    // const arr = [1, 2, 3, [4, [5, 7]], 8, 9]
+    // // console.log(arr)
+    // const flatenarr = [];
+    // function farr(arr) {
+    //   for (let i = 0; i < arr.length; i++) {
+    //     if (Array.isArray(arr[i])) {
+    //       farr(arr[i])
+    //     } else {
+    //       flatenarr.push(arr[i])
+    //     }
+    //   }
+    // }
+    // farr(arr)
+    // console.log(flatenarr)
+
+
+    //25 january, 2025
+    // let x =1;
+    // function fun(){
+    //   console.log(x); //error
+    //   let x =2 
+    // }
+    // fun()
+
+
+    // const a = {
+    //   n:2,
+    // }
+    // const b = a;
+    // b.n = 3;
+    // console.log(a.n); //3
+
+
+    // console.log(... 'hello')
+
+    // const str = 'banna';
+    // const charCount = {};
+    // for (let i = 0; i < str.length; i++) {
+    //   charCount[str[i]] = (charCount[str[i]] || 0) + 1 
+    // }
+    // console.log(charCount)
+
+
+    // remove duplicate item
+    // const arr = [1, 1, 3, 4, 3, 2];
+    // const nArr = [... new Set(arr)]
+    // console.log(nArr)
+
+
+
+
+    // const arr = [-10, 2, -4, 3, -23, 8];
+
+    // function second_largest(arr){
+    //   large = -1;
+    //   second_large = -1;
+    //   for (let item of arr){
+    //     if(large < item){
+    //       second_large = large;
+    //       large = item;
+    //     }else if (second_large < item){
+    //       second_large = item;
+    //     }
+    //   }
+    //   return second_large;
+    // }
+
+    // console.log(second_largest(arr))
+
+
+
+
+    // show reverse string
+
+    // const st = 'shahdat hossain';
+    // let res = '';
+
+    // for (let i = st.length - 1; i >= 0; i--) {
+    //   res += st[i] 
+    // }
+    // console.log(res)
+
+
+
+
+    // console.log(a) // undefined
+    // var a = 4;
+
+
+    // stact memory
+
+    // let a = 10;
+    // let b = a; 
+    // console.log(b)
+    // b = 29;
+    // console.log(b)
+
+    // heap memory
+    // const user1 = {name: 'shahdat', dept: 'cse'};
+    // const user2 = user1
+    // console.log(user2)
+    // user2.name = 'rakib';
+    // user2.dept = 'phy';
+    // console.log(user1, user2)
+    // const user3 = {...user1}
+    // console.log(user3)
+    // user3.name = 'manik';
+    // user3.dept = 'eng';
+    // console.log(user3, user2)
+
+
+    // async function fun(){
+    //   return 10
+    // }
+
+    // console.log(fun())
+
+
+
+    // start executing after 3sec.
+    // setTimeout(() => {
+    //   for (let i = 0; i < 8; i++) {
+    //     console.log(i);
+    //   }
+    // }, 3000);
+
+
+
+    // let i = 1;
+    // const interval = setInterval(() => {
+    //   console.log(i);
+    //   i++;
+
+    //   if(i > 5){
+    //     clearInterval(interval)
+    //   }
+    // }, 2000)
+
+
+
+    // const delay = (ms) => {
+    //   new Promise(resolve => setTimeout(resolve, ms))
+    // }
+
+    // async function fun(){
+    //   for (let i = 0; i < 6; i++) {
+    //    await delay(3000);
+    //     console.log(i)
+    //   }
+    // }
+
+    // fun()
+
+
+
+    // function fun(){
+    //   for (let i = 0; i < 6; i++) {
+    //     console.log(i);
+    //   }
+    // }
+
+    // setTimeout(fun, 2000);
+
+
+    // const arr = [1, 2, 3];
+    // arr[10] = 5;
+
+    // console.log(arr ,arr.length) // 11
+
+
+
+    // const [a,b] = [2, 'shahdat'];
+    // console.log(a, b)
+
+
+    // const [, , , , a] = [1, 2, 3, 4, 5];
+    // console.log(a) // 5
+
+
+    // var a = 3
+    // var a = 5
+    // console.log(a)
+
+
+    // function fun(){
+    //   if(true){
+    //     var a = 'shahdat'
+    //   }
+    //   console.log(a)
+    // }
+    // fun()
+
+
+    // var a 
+    // console.log(a)  //undefined
+    // var a = 5 
+
+
+    // const user = {
+    //   name: 'shahdat',
+    // }
+
+    // console.log(user.name)
+
+    // user.name = 'rakib'
+
+    // console.log(user.name)
+
+
+
+    // var x = 5;
+
+    // function test() {
+    //   console.log(x);  // undefined
+    //   var x = 10;
+    // }
+
+    // test();
+
+
+    //shallow copy
+    // const u1 = {
+    //   name: 'shahdat',
+    //   address: {
+    //     city: 'dhaka',
+    //     country: 'bd'
+    //   }
+    // };
+
+    // const u2 = {...u1};
+    // u2.address.country = 'pakistan' 
+    // console.log(u1)
+    // console.log(u2)
+
+  
+  //deep copy
+  // const u1 = {
+  //   name: 'shahdat',
+  //   address: {
+  //     city: 'chandpur',
+  //     country: 'pakistan'
+  //   }
+  // }
+
+  // const u2 = JSON.parse(JSON.stringify(u1))
+  // u2.address.city = 'dhaka';
+  // console.log(u1)
+  // console.log(u2)
+
+
+
+  // console.log(2 + true) // 3 [true = 1]
+  // console.log(2 + false) // 2 [false = 0]
+
+
+  // console.log('9' - 2) // 7 ['9' convert number 9]
+
+
+  // const arr = []
+  // const arr1 = []
+
+  // console.log(arr === arr1)  //false
+  // console.log([] == []) //false
+
+
+  // let arr = [2, 5, 12, 1, 0, -2, 8, -3]
+  // console.log(arr.sort((a,b) => a - b)[0]) // smallest number
+
+  // let small = arr[0]
+  // let second_small = arr[0]
+  // for(item of arr){
+  //   if(small > item){
+  //     second_small = small
+  //     small = item
+  //   }
+  // }
+  // console.log(small)
+  // console.log(second_small)
+
+
+  // string reverse
+  // let st = 'shahdat';
+  // console.log(st.split('').reverse().join(''))
+
+
+  // let a = [3, 2, 50, 1, 23, 43, 22]
+  // let even = []
+  // for(item of a){
+  //   if(item%2 == 0){
+  //     even.push(item)
+  //   }
+  // }
+
+  // console.log(even)
+
+
+  // function fun(a, b){
+  //   console.log(a + b)
+  // }
+  // fun(2, 3)
+
+
+
+//   const fun = (a, b) => {
+//     return a + b 
+//   }
+
+//  console.log(fun(3, 5))
+
+// console.log([1,2,3,4] + [1,2,3,4])
+
+
+// let x = 40;
+// {
+//   let x = 39;
+// }
+
+// console.log(x) // 40
+
+
+// console.log(!!'')
+
+// console.log(!!'hello')
+
+
+// console.log([] == [])
+
+
+// console.log('1')
+// setTimeout(() => {
+//   console.log('2')
+// }, 0);
+
+// Promise.resolve().then(() => {
+//   console.log('3')
+// });
+
+// console.log('4')
+
+// // output => 1 4 3 2
+
+
+// let x = 30;
+// const obj = {
+//   x: 20,
+//   getX:function(){
+//     return this.x
+//   }
+// }
+
+// console.log(obj.getX()) //20
+
+
+
+// console.log([] + []); // ''
+// console.log([] + {}); // [object Object]
+// console.log({} + []); // [object Object]
+
+
+
+// console.log( 0 && 'Hello'); // 0 
+// console.log('Hello' && 0 ); // 0
+
+// console.log('HI' && 'Hello') // Hello
+
+
+// console.log(0 || 'JS'); // JS
+// console.log('' || 'default'); // default 
+
+
+
+// let a = 1;
+// let b = a++
+// console.log(a, b) // 1, 1 
+
+
+// var x = 10;
+// (function() {
+//   console.log(x);
+//   var x = 20
+// })();
+
+
+// let x = 10;
+// (function() {
+//   console.log(x)
+// })(); // 10
+
+
+// let obj = {
+//   a: 1,
+// }
+// let arr = [obj];
+// arr[0].a = 99;
+// console.log(obj.a) // 99
+
+
+// input: [0, 1, 0, 3, 12]
+// output: [1, 3, 12, 0, 0]
+
+// const arr = [0, 1, 0, 3, 12]
+// let res = []
+// let j = 0;
+// for( item of arr){
+//   if(item !== 0){
+//     res.push(item)
+//     j++
+//   }
+// }
+// for (let i = 0; i < arr.length - j; i++) {
+//   res.push(0)
+// }
+
+// console.log(res)
+
+
+
+
+// input : 'aabbccd'
+// output: 'd'
+
+// const str = 'aabbccd'
+// const first = [...str].find(char => str.indexOf(char) == str.lastIndexOf(char ))
+
+// console.log(first)
+
+
+// input: 'i love js'
+// output: 'js love i'
+
+// function revWord(str) {
+//   return str.split(" ").reverse().join(" ")
+// }
+// const str = 'i love js'
+// console.log(revWord(str))
+
+
+// input: [1,2,3,4,5,6]
+// output: [1,2], [3,4], [5,6]
+
+// function subArr(arr, size){
+//   const res = [];
+//   for (let i =0; i<arr.length; i+=size){
+//     res.push(arr.slice(i, i+size))
+//   }
+  
+//   return res
+// }
+
+// const arr = [1,2,3,4,5,6];
+// console.log(subArr(arr, 2))
+
+
+
+// let marks = {
+//   shahdat : 20,
+//   rakib: 3,
+//   manik: 5,
+//   haha: 49,
+//   ridoy: 39,
+// }
+
+
+// console.log(Object.keys(marks).length)
+
+// for (let i = 0; i < Object.keys(marks).length; i++) {
+//   console.log('the marks of ' + Object.keys(marks)[i]  + ' is ' + marks[Object.keys(marks)[i]] )
+// }
+
+
+// for(let key in marks){
+//   console.log('Marks of ' + key + ' is ' + marks[key])
+// }
+
+
+// const cn = 4;
+
+// let i;
+
+// while(cn != i){
+//   i = prompt('enter the number')
+// }
+
+// console.log('done')
+
+
+// let name = 'shahdat Hossain shahdat';
+// console.log(name.replace('sha', 'Sha'))
+
+
+
+
+// const ar = [1,2,4,5,6];
+
+// for(let i in ar){
+//   console.log(ar[i])
+// }
+
+// console.log('next')
+
+// ar.forEach((ele) => {
+//   console.log(ele)
+// })
+
+
+
+// const name = 'shahdat'
+// console.log(typeof name)
+
+// const ar_name = Array.from(name)
+// console.log(ar_name)
+// console.log(ar_name[4])
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

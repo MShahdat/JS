@@ -1,0 +1,11 @@
+px => which is fixed unit for all screen size.
+% => size will be depend on screen size not parent.
+vh => size will be depend on parent height not screen.
+vw => size will be depend on parent widht not screen.
+vmin => size will be depend on minimum screen size not parent.
+vmax => size will be depend on max screen size not parent. 
+em => fontsize depend on parent size.
+rem => 16px which depend on size not parent size.
+ch => means no of character show
+lh => means no of line (margin-top: 1lh => 1 line space in top)
+

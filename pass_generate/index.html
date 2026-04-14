@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <label>password length</label>
+    <input id="len" type="number" value="8"><br>
+    <label>
+      <input id="upper" type="checkbox"> include uppercase
+    </label><br>
+
+    <label for="">
+      <input id="num" type="checkbox"> include number
+    </label><br>
+
+    <label for="">
+      <input id="special" type="checkbox"> include special character
+    </label><br><br>
+
+    <button onclick="generate()">pass generate</button>
+    <p style="color: green;" id="pass"> your password will be appear here</p>
+  </div>
+
+  <script>
+    function generatePass(len, upper, num, special) {
+      const lower = 'abcdefghijklmnopqrstuvwxyz';
+      const ucase = 'ABCDEDFGHIJKLMNOPQRSTUVWXYZ';
+      const digit = '0123456789';
+      const specialChar = '!@#$%^&*()-_=+[]{}|;:,.<>?';
+
+      let chars = lower;
+      let password = [];
+
+      password.push(lower[random(lower.length)])
+      // console.log(password);
+
+      if (upper) {
+        password.push(ucase[random(ucase.length)]);
+        chars += ucase;
+      }
+
+      if (num) {
+        password.push(digit[random(digit.length)]);
+        chars += digit;
+      }
+
+      if (special) {
+        password.push(specialChar[random(specialChar.length)]);
+        chars += specialChar;
+      }
+
+      console.log(password)
+
+      while (password.length < len) {
+        password.push(chars[random(chars.length)]);
+      }
+      return shuffle(password).join('');
+    }
+
+    function random(length) {
+      return Math.floor(Math.random() * length)
+    }
+
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]]
+      }
+      return arr
+    }
+
+    function generate() {
+      const len = parseInt(document.getElementById('len').value);
+      if(len<4){
+        alert('len should be minimum 6');
+        return
+      }
+      const upper = document.getElementById('upper').checked;
+      const num = document.getElementById('num').checked;
+      const special = document.getElementById('special').checked;
+      // console.log(len)
+      // console.log(upper)
+      const pass = generatePass(len, upper, num, special);
+      document.getElementById('pass').textContent = pass;
+    }
+  </script>
+</body>
+
+</html>
