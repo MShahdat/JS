@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    .red {
+      background-color: red;
+      color: white;
+    }
+
+    .green {
+      background-color: green;
+      color: white;
+    }
+
+    .black {
+      background-color: black;
+      color: white;
+    }
+
+    #inner {
+      padding: 3rem;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="class1">
+    <span id="inner" >this is element 1</span>
+  </div>
+
+
+  <script>
+    console.log(class1.classList)
+    inner.classList = 'green'
+    inner.classList.remove('green')
+    inner.classList.add('red')
+    // inner.classList.toggle('green')
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class</title>
+</head>
+<body>
+  
+
+  <script>
+
+
+    class Car{
+      constructor (name, year){
+        this.name = name;
+        this.year = year;
+      }
+    }
+
+    const car1 = new Car('toyota', 2000)
+    console.log(car1)
+    const car2 = new Car('BMW', 2004)
+
+
+
+    // class method
+    class Person {
+      constructor(name, year, nid, city){
+        this.name = name;
+        this.year = year
+        this.nid = nid
+        this.city = city
+      }
+
+      age(){
+        const date = new Date()
+        // console.log(date.getFullYear())
+        return date.getFullYear() - this.year
+      }
+
+      student(status, school, location){
+        return `${this.name} is a ${status} student and currently studies ${school} in ${location}`
+      }
+    }
+
+    const person1 = new Person ('shahdat', 2001, 2323232323, 'Dhaka')
+    console.log(person1)
+    console.log(typeof person1.nid)
+    console.log(person1.age())
+    const person2 = new Person ('rakib', 2000, 233434321, 'Dhaka')
+    console.log(person2.student('good', 'tejgaon collage', 'Farmgate'))
+
+    console.log(person1.student('bad', 'Green University of Bangladesh', 'Purbachal'))
+
+
+
+    // js class inheritance
+    class Bike {
+      constructor (brand, year) {
+        this.brand = brand
+        this.year = year
+      }
+
+      present (){
+        return `I have a ${this.brand} bike which I bought ${this.year}`
+      }
+    }
+
+
+    class Model extends Bike{
+      constructor (bike, model){
+        super(bike.brand, bike.year)
+        this.model = model
+      }
+
+      show(){
+        return `I have a ${this.brand} bike which model ${this.model} and I bought ${this.year}`
+      }
+    }
+
+    const bike1 = new Bike('Yemahha', 2015)
+    console.log(bike1.present())
+
+    const model1 = new Model(bike1, 'R15')
+    console.log(model1.show())
+
+
+
+    // get and set method
+    class Food {
+      constructor (name, amount){
+        this.name = name
+        this.amount = amount
+      }
+
+      show (){
+        return `I bought ${this.amount} kg ${this.name} yesterday`
+      }
+
+      get fName(){
+        return this.name
+      }
+
+      set fName(x) {
+        this.name = x
+      }
+
+
+
+      get weight(){
+        return this.amount
+      }
+
+      set weight(x){
+        this.amount = x
+      }
+    }
+
+    const food1 = new Food('apple', 3)
+    console.log(food1.show()) // normal display
+
+    food1.fName = 'orange' // change
+    food1.weight = 2
+    debugger
+    console.log(food1.show())
+
+
+
+
+
+
+  </script>
+</body>
+</html>

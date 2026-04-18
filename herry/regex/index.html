@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regular Expression</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+  const reg = new RegExp('ab+c');
+  console.log(typeof reg)
+
+
+  // exec() method. expected output array
+  // const regex = /fo+/g; 
+  // console.log(typeof regex)
+  // const str = 'table fotball, foosball ha ha foo'
+  // let arr 
+  // while((arr = regex.exec(str)) !== null){
+  //   console.log(`found ${arr[0]}. Next srarts at ${regex.lastIndex}`)
+  // }
+
+  // text() method. expected output true or false.
+  // const str = 'table football'
+  // const r = /fo+/;
+  // const re = /fo/g;
+
+  // console.log(r.test(str))
+  // // Expected output: true
+
+  // console.log(re.lastIndex)
+  // // Expected output: 0
+
+  // console.log(re.test(str));
+  // // Expected output: true
+
+  // console.log(re.lastIndex);
+  // // Expected output: 9
+
+  // console.log(re.test(str));
+  // // Expected output: false
+
+
+  // match() method. return result array
+  // const paragraph = "The quick brown fox jumps over the lazy dog. It barked.";
+  // const regex = /[A-Z]/g;
+  // const found = paragraph.match(regex);
+
+  // console.log(found); // ['T', 'I']
+
+
+// const regexp = /t(e)(st(\d?))/g;
+// const str = "test1test2";
+
+// const array = [...str.matchAll(regexp)];
+
+// console.log(array[0]); //Array ["test1", "e", "st1", "1"]
+
+
+// console.log(array[1]); //Array ["test2", "e", "st2", "2"]
+
+
+const str = "The quick brown fox jumps over the lazy dog.";
+
+const words = str.split(" ");
+console.log(words[2]);
+// Expected output: "fox"
+
+const chars = str.split("");
+console.log(chars[8]);
+// Expected output: "k"
+
+const strCopy = str.split();
+console.log(strCopy);
+// Expected output: Array ["The quick brown fox jumps over the lazy dog."]
+
+
+</script>
+
+</html>

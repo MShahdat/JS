@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice </title>
+</head>
+
+<body>
+  <h1>js Practice</h1>
+  <p></p>
+
+  <script>
+
+    console.log('problem 1')
+    const txt = 'abck asd asdf asdf Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem Aperiam, fugit. Dolor perspiciatis debitis aliquam recusandae sunt natus omnis tempora ut! Officia ab voluptate vel incidunt totam omnis sit aliquam placeat accusamus repellendus lorem pariatur ipsa molestias provident soluta, tenetur voluptas iure!'
+    console.log(txt)
+
+    const regex = /Lorem/ig
+
+    const found = txt.match(regex)
+    console.log(found)
+
+    const len = found ? found.length : 0
+    console.log('lenght is ' + len)
+
+
+    const position = txt.search(regex)
+
+    if (position > -1) {
+      console.log('position ' + position)
+    } else {
+      console.log('item not found')
+    }
+
+
+    console.log('problem 2')
+    function linearSearch (arr, re){
+      const len = arr.length
+      for (let i = 0; i < len; i++) {
+        if(arr[i] == re){
+          return i
+        }
+      }
+      return 'item not found'
+    }
+
+    console.log(linearSearch([2, 4, 3, 2, 4], 3))
+  
+    
+
+
+    console.log('problem 3')
+
+    function largeSring(arr){
+      console.log(arr)
+      let leng = -1
+      const len = arr.length
+      let count
+
+      for (let i = 0; i < len; i++) {
+        if(arr[i].length > leng){
+          leng = arr[i].length
+          count = i
+        }
+      }
+      // console.log('index of : ', arr.indexOf(arr[count]))
+
+      return {
+        str : arr[count],
+        idx : count
+      }
+
+    }
+
+  const ob =  largeSring(['shahdat', 'sain ahmed', 'rakib', 'shahdat hossain' , 'manik', 'asif', 'ridoy safayet'])
+  console.log('the largest string : ' + ob.str)
+  console.log('index number of largest string : ' + ob.idx)
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js Sets</title>
+</head>
+<body>
+  
+
+  <script>
+
+    // The new Set() Method
+    const a = new Set(['a',2, 3, 'b', true, false, undefined, {a: 2, b: 3}, [2,3,4], 'c', 'd'])
+    console.log(a)
+
+
+    const b = new Set();
+    b.add('a');
+    b.add('b');
+    b.add('c');
+
+    console.log('set type : ', typeof b, 'and  length of sets', b.size)
+    for(let i of b){
+      console.log(i)
+    }
+
+    // has() method used for search item
+    console.log(b.has('a')) // possible true/false.
+
+
+    // The values() and key() Methods for cpy set
+    const cpy = b.values()
+    console.log(cpy)
+
+    const cpy1 = b.keys()
+    console.log(cpy1)
+
+
+
+    // The union(), intersection(), and difference Method
+    const A = new Set(['a', 'b', 'c', 1, 2])
+    const B = new Set([1, 'c'])
+
+    console.log(A.union(B))
+    console.log(A.intersection(B))
+    console.log(A.difference(B))
+    console.log(B.difference(A))
+
+
+
+    // The symmetricDifference() Method
+    console.log(A.symmetricDifference(B))
+
+
+    // The isSubsetOf() Method
+    console.log(A.isSubsetOf(B)) // expected output true or false
+    console.log(B.isSubsetOf(A))
+
+
+    // The isSupersetOf() Method
+    console.log(A.isSupersetOf(B)) // expected output true or false
+    console.log(B.isSupersetOf(A))
+
+
+    // The isDisjointFrom() Method
+    console.log(A.isDisjointFrom(B)) // expected output true or false
+    console.log(B.isDisjointFrom(A))
+
+
+
+    // JavaScript WeakSet
+    let s = new WeakSet();
+
+    let ab = [
+      {name: 'shahdat', age: 34},
+      {name: 'rakib', age: 32}
+  ]
+  let bc = {apple: 200, orange: 322}
+
+    s.add(ab)
+    s.add(bc)
+    console.log(s)
+
+
+    
+
+  </script>
+
+</body>
+</html>

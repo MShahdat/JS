@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    // object define different way
+
+    // Using an Object Literal
+    const obj1 = {
+      name: 'shahdat',
+      city: 'dhaka'
+    }
+
+    // console.log(obj1)
+    const cpy = obj1
+    cpy.name = 'rakib'
+    // console.log(obj1, cpy)
+
+
+    // Using the new Keyword
+    const obj2 = new Object({
+      name: 'manik',
+      city: 'dhaka'
+    })
+
+    const cpy2 = obj2
+    cpy2.age = 33
+    // console.log(cpy2, obj2)
+
+
+    // JavaScript Object.create()
+    const obj3 = {
+      name: 'ridoy',
+      city: 'botsoana'
+    }
+
+    const man = Object.create(obj3)
+    console.log(obj3, man)
+    man.age = 23
+    man.name = 'shahdat'
+    console.log(obj3, man)
+
+
+
+    // JavaScript Object fromEntries()
+    const fruits = [
+      ['apple', 200],
+      ['banna', 300]
+    ];
+
+    console.log(fruits, typeof fruits)
+    const obj4 = Object.fromEntries(fruits)
+    console.log(obj4)
+
+
+
+    // JavaScript Object.assign()
+    const person = {
+      name: 'shahdat',
+      id: 48,
+      dept: 'cse'
+    }
+
+    const person1 = {
+      name: 'ridoy',
+      id: 39,
+      age: 20
+    }
+
+    console.log(person, person1)
+    Object.assign(person, person1)
+    console.log(person)
+    console.log('the key of person object ', Object.keys(person))
+    console.log('the value of person object ', Object.values(person))
+
+
+
+    // Object.groupBy() Method
+    const fruits1 = [
+      { name: "apple", quantity: 300 },
+      { name: 'bananas', quantity: 100 },
+      { name: 'orange', quantity: 399 },
+      { name: 'kiwi', quantity: 49 },
+      { name: 'mango', quantity: 40 },
+    ]
+
+    console.log(fruits1)
+
+    function callback({ quantity }) {
+      return quantity > 200 ? 'ok' : 'low'
+    }
+
+    const res = Object.groupBy(fruits1, callback)
+    console.log(res.low)
+
+
+
+
+    // The Object.preventExtensions() Method
+    const a = {
+      name: 'shahdt',
+      age: 28,
+      city: 'dhaka'
+    }
+
+    Object.preventExtensions(a);
+    try {
+      a.dept = 'cse'
+      console.log(a)
+    } catch {
+      console.log('error');
+    }
+
+
+    const abc = ['a', 'b', 'c', 'd', 'e']
+    console.log(abc)
+    Object.preventExtensions(abc)
+    try{
+      abc.push('x')
+    }catch(err){
+      console.log(err)
+    }
+
+    abc.pop()
+    console.log(abc)
+    try{
+      abc.push('a')
+    }catch(err){
+      console.log(err)
+    }
+
+
+
+    // JavaScript Object.isExtensible()
+    const b = {
+      name: 'shahdat',
+      age: 34
+    }
+
+    Object.preventExtensions(b)
+    if(Object.isExtensible(b)){ // if not extensible then output will be false otherwise it will be true.
+      b.city = 'dhaka'
+    }else{
+      console.log('this object is not extensible')
+    }
+
+    console.log(b)
+
+
+
+    // JavaScript Object.seal()
+    const c = {
+      name: 'shhadat',
+      age: 32
+    }
+
+    Object.seal(c)
+    c.city = 'dhaka'
+    //delete c.name
+    console.log(c)
+
+    console.log(Object.isSealed(c)) // if seal then output will be true otherwise it will be false.
+
+
+
+    // JavaScript Object.freeze()
+    const d = {
+      a: 'asd',
+      b: 'asdasd'
+    }
+
+    Object.freeze(d)
+    d.x = 'asdasdf asdf'
+    console.log(Object.isFrozen(d)) // if freeze the output will be true otherwise false.
+
+
+
+
+    
+
+  </script>
+</body>
+
+</html>

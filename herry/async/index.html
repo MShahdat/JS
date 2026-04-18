@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js async</title>
+</head>
+
+<body>
+
+  <button id="date">show time</button>
+  <h3 id="show"></h3>
+  <script>
+
+    // console.log('a')
+    // setTimeout(() => {
+    //   console.log('b')
+    // }, 1000);
+    // console.log('c')
+    // res => a c b
+
+
+
+    // let a 
+    // setTimeout(() => {
+    //   a = 5
+    // }, 1000);
+    // console.log(a) // undefined
+
+
+
+
+    // setTimeout(fun, 1000); 
+    // // setTimeout(fun(), 1000) // no waiting 1 sec
+    // function fun(){
+    //   console.log('show after 1 sec')
+    // }
+
+
+
+
+    // setTimeout(function() {
+    //   fun('welcome for delay', 1)    
+    // }, 1000);
+
+    // function fun(value, sec){
+    //   console.log(value + 'for ' + sec + ' second')
+    // }
+
+
+
+
+
+    // setInterval(fun, 1000);
+    // function fun(){
+    //   let d = new Date()
+    //   console.log(d.getHours() + " : " + d.getMinutes() + " : " + d.getSeconds())
+    // }
+
+
+    // document.getElementById('date').addEventListener('click', fun)
+
+    // function fun(){
+    //   let time = new Date()
+    //   document.getElementById('show').innerText = time
+    // }
+
+
+
+
+
+    // function sum(a, b, callback){
+    //   let s = a + b;
+    //   if(callback){
+    //     callback(s)
+    //   }
+    // }
+
+    // function show(res){
+    //   console.log(res)
+    // }
+
+    // sum(4, 5, show)
+
+
+
+
+    // function processOrder() {
+    //   console.log('processing order for customer 1')
+    //   let time = Date.now()
+    //   console.log(time)
+    //   //synchronous behavior
+    //   // while(Date.now() - time < 1){ 
+    //   //   console.log('processing.....')
+    //   // };
+
+
+    //   //asynchronous behavior
+    //   setTimeout(() => {
+    //     console.log('processing....')
+    //      console.log('processed order for customer 1')
+    //   }, 1000);
+    // }
+
+    // console.log('take order for customer 1')
+    // processOrder()
+    // console.log('completed order for customer 1')
+
+
+
+
+    // const takeOrder = (customer, callback) => {
+    //   console.log(`take order for ${customer}`)
+    //   callback(customer)
+    // }
+
+    // const processOrder = (customer, callback) => {
+    //   console.log(`processing order for ${customer}`)
+    //   setTimeout(() => {
+    //     console.log('processing....')
+    //     console.log(`processed order for ${customer}`)
+    //     callback(customer)
+    //   }, 3000);
+    // }
+
+    // const completeOrder = (customer) => {
+    //   console.log(`completed order for ${customer}`)
+    // } 
+
+    // takeOrder('"shahdat"', (customer)=> {
+    //   processOrder(customer, (customer) => {
+    //     completeOrder(customer)
+    //   })
+    // })
+
+
+
+
+    // promise
+    // const hasMeeting = false
+
+    // const meeting = new Promise((resolved, reject) => {
+    //   if(!hasMeeting){
+    //     const meet = {
+    //       name: 'technical meeting',
+    //       location: 'google meet',
+    //       time: '10:00 PM'
+    //     }
+    //     resolved(meet)
+    //   }else{
+    //     reject(new Error('promise already scheduled!'))
+    //   }
+    // })
+
+    // meeting
+    //   .then((res) => {
+    //     console.log(res)
+    //   }).catch((err)=> {
+    //     console.log(err.message)
+    //   })
+
+    //   console.log('promise')
+
+
+
+
+    
+
+
+
+  </script>
+</body>
+
+</html>

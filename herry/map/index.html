@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js map</title>
+</head>
+<body>
+  
+  <script>
+
+    // create an object
+    const map = new Map()
+    console.log(map)
+    map.set('name' , 'shahdat');
+    map.set('age', 34);
+
+    console.log(map) // display all
+    console.log(map.get('name')) // display value based on key
+
+
+
+    const map1 = new Map([
+      ['apple', 300],
+      ['banana', 200],
+      ['orange', 100],
+    ])
+
+    map1.set('mango', 400)  // 
+    map1.set('apple', 100) // replace item if already exist otherwise add end of the list.
+    console.log(map1)
+    console.log(map1.get('orange'))
+
+
+    const map2 = new Map()
+    console.log(map2)
+    console.log(map2 instanceof Map)
+
+
+  </script>
+</body>
+</html>

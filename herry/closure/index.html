@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closure</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    // function fun() {
+    //   a = 4;
+    //   return a
+    // }
+    // console.log(fun())
+
+
+
+
+
+    // // Initiate counter
+    // let counter = 0;
+
+    // // Function to increment counter
+    // function add() {
+    //   counter += 1;
+    // }
+
+    // // Call add() 3 times
+    // add();
+    // add();
+    // add();
+    // console.log('count is : ', counter)
+    // counter = 5;
+    // console.log(counter)
+
+
+
+
+
+    // // Initiate counter
+    // let counter = 0;
+
+    // // Function to increment counter
+    // function add() {
+    //   let counte = 0;
+    //   counte += 1;
+    // }
+
+    // // Call add() 3 times
+    // add();
+    // add();
+    // console.log(counter) // 0
+
+
+
+
+
+
+    // // Function to increment counter
+    // function add() {
+    //   let counter = 0;
+    //   counter += 1;
+    //   return counter;
+    // }
+
+    // let x = 0;
+    // // Call add() 3 times
+    // x = add();
+    // x = add();
+    // x = add();
+    // console.log(x) // 1
+
+
+
+
+
+
+    // function add() {
+    //   let counter = 0;
+    //   function plus() { counter += 1; }
+    //   plus();
+    //   return counter;
+    // }
+
+    // console.log(add()) // 1
+    // console.log(add())  // 1
+    // console.log(add())  // 1
+
+
+
+
+
+    function myCounter() {
+      let counter = 0;
+      return function () {
+        counter++;
+        return counter
+      };
+    }
+    const add = myCounter();
+    console.dir(add)
+    add();
+    add()
+    add()
+    console.log('final counter value : ', add())
+    console.log('final counter value : ', add())
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
