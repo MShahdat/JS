@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Programming Interface</title>
+</head>
+
+<body>
+
+  <h2 style="text-align: center; color: red; text-decoration: underline ;">form api</h2>
+
+  <input id="id1" type="number" value="" min="100" max="500" required>
+  <button id="validate">validate</button>
+  <p id="show"></p>
+
+
+  <h2>js geolocation api</h2>
+  <p>click the button to get your coordinates</p>
+  <button id="geo">click</button>
+  <p id="lat_long"></p>
+
+
+  <h2>JavaScript Geolocation API</h2>
+  <p>Click the button to get your coordinates.</p>
+
+  <button onclick="getLocation()">Try It</button>
+
+  <p id="demo"></p>
+
+
+
+  <h2>worker api</h2>
+  <button id="worker">click</button>
+  <p id="wo">show output</p>
+  <h4 id="de">another output</h4>
+
+
+  <script>
+
+    document.getElementById('validate').addEventListener('click', validate)
+
+    function validate() {
+      // console.log('clicked!')
+      const input = document.getElementById('id1');
+      // console.log(input.value)
+
+      // if(input.validity.rangeOverflow){
+      //   input.setCustomValidity(`value is greater than ${input.max}`)
+      // }else if(input.validity.rangeUnderflow){
+      //   input.setCustomValidity(`value is less than ${input.min}`)
+      // }
+
+      if (!input.checkValidity()) {
+        document.getElementById('show').innerHTML = input.validationMessage
+      } else {
+        document.getElementById('show').innerHTML = 'input is ok!'
+      }
+    }
+
+
+
+    document.getElementById('geo').addEventListener('click', latLong)
+
+    const x = document.getElementById('lat_long');
+
+    function latLong() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        x.innerHTML = 'geolocation is not supported by this browser'
+      }
+    }
+
+    // function showError(error) {
+    //   switch (error.code) {
+    //     case error.PERMISSION - DENIED:
+    //       x.innerHTML = 'user denied the request for geolocation';
+    //       break
+
+    //     case error.POSITION_UNAVAILABLE:
+    //       x.innerHTML = 'Location information is unavailable'
+    //       break
+
+    //     case error.TIMEOUT:
+    //       x.innerHTML = 'the request to get user location timed out'
+    //       break
+
+    //     case error.UNKNOWN_ERROR:
+    //       x.innerHTML = 'An unknown error occurred'
+    //       break;
+    //   }
+    // }
+
+    // function showPosition(position) {
+    //   x.innerHTML = 'Latitude: ' + position.coords.latitude + '<br> Longitude: ' + position.coords.longitude;
+    //   console.log('done')
+    //   console.log('latitude : ', position.coords.latitude.toFixed(6))
+    //   console.log('longitude : ', position.coords.longitude.toFixed(6))
+    //   console.log('accuracy : ', position.coords.accuracy);
+    //   console.log('altitude : ', position.coords.altitude);
+    //   console.log('altitudeAccuracy : ', position.coords.altitudeAccuracy);
+    //   console.log('heading : ', position.coords.heading);
+    //   console.log('speed : ', position.coords.speed);
+    //   console.log('timestamp : ', position.timestamp);
+
+    // }
+
+
+    const y = document.getElementById("demo");
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition);
+      } else {
+        y.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      y.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
+
+
+
+    if (typeof (Worker) !== 'undefined') {
+      console.log('worker is support')
+    } else {
+      console.log('worker is not supported ')
+    }
+
+
+
+    document.getElementById('worker').addEventListener('click', worker)
+
+    function worker(){
+
+      let i = 0;
+      while(i < 10000000000){
+        i++;
+      }
+
+      document.getElementById('wo').innerHTML = 'final value' + i
+      
+      document.getElementById('de').innerHTML = 'show result after count';
+      
+    }
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

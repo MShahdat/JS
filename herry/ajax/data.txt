@@ -1,0 +1,3 @@
+
+<h2>Welcome to AJAX</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus reprehenderit dolorem natus recusandae quibusdam quis obcaecati rerum beatae nisi doloribus quam voluptas, nesciunt enim vel non, dolore sit dicta atque repellat, veniam illum? Doloribus, soluta quam fugiat rerum consectetur cum ea ut modi nesciunt nemo aliquam eum itaque nisi explicabo.</p>

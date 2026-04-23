@@ -22,7 +22,7 @@
 
 
 
-    // let a 
+    // let a
     // setTimeout(() => {
     //   a = 5
     // }, 1000);
@@ -31,7 +31,7 @@
 
 
 
-    // setTimeout(fun, 1000); 
+    // setTimeout(fun, 1000);
     // // setTimeout(fun(), 1000) // no waiting 1 sec
     // function fun(){
     //   console.log('show after 1 sec')
@@ -41,7 +41,7 @@
 
 
     // setTimeout(function() {
-    //   fun('welcome for delay', 1)    
+    //   fun('welcome for delay', 1)
     // }, 1000);
 
     // function fun(value, sec){
@@ -91,7 +91,7 @@
     //   let time = Date.now()
     //   console.log(time)
     //   //synchronous behavior
-    //   // while(Date.now() - time < 1){ 
+    //   // while(Date.now() - time < 1){
     //   //   console.log('processing.....')
     //   // };
 
@@ -126,7 +126,7 @@
 
     // const completeOrder = (customer) => {
     //   console.log(`completed order for ${customer}`)
-    // } 
+    // }
 
     // takeOrder('"shahdat"', (customer)=> {
     //   processOrder(customer, (customer) => {
@@ -165,7 +165,108 @@
 
 
 
+    // const hasMeeting = false
+
+    // const meeting = new Promise((resolved, reject) => {
+    //   if (!hasMeeting) {
+    //     const meet = {
+    //       name: 'technical meeting',
+    //       location: 'google meet',
+    //       time: '10:00 PM'
+    //     }
+    //     resolved(meet)
+    //   } else {
+    //     reject(new Error('promise already scheduled!'))
+    //   }
+    // })
+
+    // const calendar = (meet) => {
+    //   const cal = `${meet.name} has been scheduled on ${meet.location} at ${meet.time}`
+    //   return Promise.resolve(cal)
+    // }
+
+    // meeting
+    //   .then(calendar)
+    //   .then((res) => {
+    //     console.log(res)
+    //   }).catch((err) => {
+    //     console.log(err.message)
+    //   })
+
+    // console.log('promise')
+
+
+
+
+
+    // const promise1 = Promise.resolve('promise 1 resolved')
+    // const promise2 = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve('promise 2 resolved')
+    //   }, 2000);
+    // })
+    // const promise3 = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve('promise 3 resolved')
+    //   }, 1000);
+    // })
+    // // promise1
+    // //   .then((res) => console.log(res))
+    // // promise2
+    // //   .then((res) => console.log(res))
+    // // promise3
+    // //   .then((res) => console.log(res))
+    // // console.log('promise srtat')
+
+
+    // Promise.all([promise1, promise2, promise3])
+    //   .then((res) => console.log(res)) // at a time show all
+
+
+
+
+    // synchronou
+    // function fun(){
+    //   return 'hello'
+    // }
+    // console.log(fun())
+
+
+    // async function fun(){
+    //   return 'hello'
+    // }
+    // console.log(fun())
+
+
+
+
+
+    const promise1 = Promise.resolve('promise 1 resolved')
+    const promise2 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('promise 2 resolved')
+      }, 2000);
+    })
+    const promise3 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('promise 3 resolved')
+      }, 1000);
+    })
+
+    async function pro() {
+      const pro1 = await promise1
+      console.log(pro1)
+      const pro2 = await promise2
+      console.log(pro2)
+      const pro3 = await promise3
+      console.log(pro3)
+    }
+    pro()
     
+    console.log('promise start')
+
+
+
 
 
 

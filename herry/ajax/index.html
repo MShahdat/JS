@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX</title>
+</head>
+
+<body>
+
+  <h2>the XMLHttpReques Object</h2>
+  <button id="btn">show content</button>
+  <div id="show"></div>
+
+
+
+  <script>
+
+    document.getElementById('btn').addEventListener('click', show)
+
+    function show(){
+      const xhttp = new XMLHttpRequest();
+
+      xhttp.onload = function (){
+        console.log('request finished')
+        document.getElementById('show').innerHTML = this.responseText;
+        // document.getElementById('show').innerHTML = this.responseXML;
+        const res = this.getAllResponseHeaders()
+        console.log(res)
+      }
+
+      xhttp.open('GET', 'data.txt'); // 3rd parameter will be true/false. default is true and true means asynchronous and false means synchronous
+      xhttp.send();
+      console.log('hello')
+
+    }
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window</title>
+</head>
+
+<body>
+
+  <button id="assing">location.assign('path')</button><br><br>
+  <button id="back">back</button>
+  <button id="forward">forward</button>
+
+
+  <br><br><br>
+  <button id="start">start</button>
+  <button id="stop">stop</button>
+  <h2 id="show">show output</h2>
+
+
+
+  <h2>Current Time: <span style="color: peru;" id="time">show time</span> </h2>
+
+
+
+
+  <script>
+    console.log('height of the window : ', window.innerHeight + ' px')
+    console.log('width of the window : ', window.innerWidth + ' px')
+
+    // console.log('screen size of pc : ' , screen.width + ' px')
+
+
+
+
+
+
+    console.log('window location url : ' + location.href)
+    console.log('domain name of the host : ' + location.hostname)
+    console.log('path and filename of the current page : ', location.pathname)
+    console.log('web protocol : ', location.protocol)
+    // console.log('loads a new document : ', location.assign('https://www.w3schools.com'))
+
+    document.getElementById('assing').addEventListener('click', fun)
+
+    function fun() {
+      location.assign('https://www.w3schools.com')
+      // console.log('clicked')
+    }
+
+
+
+    document.getElementById('back').addEventListener('click', back)
+    document.getElementById('forward').addEventListener('click', forward)
+
+    function back() {
+      window.history.back()
+    }
+
+    function forward() {
+      window.history.forward()
+    }
+
+
+
+
+
+    console.log(navigator.cookieEnabled)
+    console.log(navigator.language)
+    console.log(navigator.onLine)
+    console.log(navigator.appName)
+    console.log(navigator.appCodeName)
+    console.log(navigator.product)
+    console.log(navigator.appVersion)
+    console.log(navigator.userAgent)
+    console.log(navigator.platform)
+    console.log(navigator.javaEnabled())
+
+
+
+
+
+    let st
+    document.getElementById('start').addEventListener('click', start)
+    document.getElementById('stop').addEventListener('click', stop)
+
+    function start() {
+      st = setTimeout(() => {
+        document.getElementById('show').innerHTML = 'executing after 3 seconds'
+      }, 3000);
+    }
+
+    function stop() {
+      console.log('stop click')
+      document.getElementById('show').innerHTML = "output doesn't show because you are 'clicked' stop button."
+      clearTimeout(st)
+    }
+
+
+    // setInterval(() => {
+    //   document.getElementById('time').innerHTML = new Date().toLocaleTimeString()
+    // }, 1000);
+
+
+
+
+    document.cookie = 'name = shahdat hossain'
+
+    document.cookie = 'username = shahdat; expires=Thu, 22 April 2026 12:00:00 UTC; path=/'
+    document.cookie = 'pass = asdfasdasdf; expires=Thu, 22 April 2026 12:00:00 UTC; path=/'
+
+    document.cookie = 'name = rakib hasan'
+
+
+    console.log(document.cookie)
+
+
+
+    function getCookie(cname) {
+      let value 
+      let c = cname + '=';
+      console.log(c)
+      const ar = document.cookie.split(';')
+      console.log(ar)
+      
+      for (let i = 0; i < ar.length; i++) {
+        console.log(ar[i])
+        let a = ar[i]
+
+        while(a.charAt(0) === ' '){
+          a = a.substring(1)
+        }
+
+        if(a.indexOf(c) === 0){
+          console.log('find')
+          return a.substring(c.length)
+        }
+      }
+
+      return ''
+    }
+
+    const coo = getCookie('username')
+    console.log(coo)
+
+
+
+
+    // const aa = 'name=rakib hasan'
+    // console.log(aa.indexOf('name='))
+
+
+  </script>
+</body>
+
+</html>

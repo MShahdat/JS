@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worker</title>
+</head>
+
+<body>
+  <h1 style="color: purple; text-align: center; text-decoration: underline;">worker</h1>
+
+
+  <h2>without worker</h2>
+  <h3>count 1 to 10000000000</h3>
+  <p>click button can't work untill count finished!</p>
+  <button id="co">start</button>
+  <button onclick="alert('hello')">click</button>
+
+  <p>show result : <span id="res"></span></p>
+  <p>time taken : <span id="time"></span></p>
+
+
+
+  <br><br>
+  <h2>with worker</h2>
+  <h3>count 1 to 10000000000</h3>
+  <p>click button work when calculating count.</p>
+  <button id="co1">start</button>
+  <button onclick="alert('hello')">click</button>
+
+  <p>show result : <span id="res1"></span></p>
+  <p>time taken : <span id="time1"></span></p>
+
+
+
+
+
+  <br><br><br>
+  <p>Count Numbers : <span id="counter"></span></p>
+  <button id="start">start worker</button>
+  <button id="stop">stop worker</button>
+  <button onclick="alert('clickable button also working when start the counter!')">clickable btn</button>
+
+
+
+
+
+  <script>
+
+
+    document.getElementById('co').addEventListener('click', count)
+
+    function count() {
+      let start = performance.now()
+      // console.log(start)
+      let i = 0;
+      while (i < 10000000000) {
+        i++;
+      }
+      let end = performance.now()
+      const time = (end - start) / 1000;
+      document.getElementById('res').innerHTML = i
+      document.getElementById('time').innerHTML = time.toFixed(2) + ' second'
+    }
+
+
+
+
+    document.getElementById('co1').addEventListener('click', worker)
+
+    let w;
+    function worker() {
+
+      if (typeof (w) == 'undefined') {
+        w = new Worker('countWorker.js');
+      }
+
+      w.onmessage = function (event) {
+        document.getElementById('res1').innerHTML = event.data;
+        console.log(event)
+        const time = (event.timeStamp/1000).toFixed(2);
+        document.getElementById('time1').innerHTML = time + ' second'
+      }
+    }
+
+
+
+
+
+
+
+
+    document.getElementById('start').addEventListener('click', startCount)
+    document.getElementById('stop').addEventListener('click', stopCount)
+
+
+    let w1
+    function startCount(){
+      console.log('start')
+      if(typeof(Worker) !== 'undefined'){
+        if(!w1){
+          w1 = new Worker('counter.js')
+        }
+
+        w1.onmessage = function(event){
+          document.getElementById('counter').innerHTML = event.data + ' second'
+          // console.log(event.data)
+        }
+
+      }else{
+        console.log('Sorry! No Web Worker support..')
+      }
+    }
+ 
+
+    function stopCount(){
+      console.log('stop')
+      w1.terminate();
+      w1 = undefined;
+    }
+
+
+
+  </script>
+</body>
+
+</html>
